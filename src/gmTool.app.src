@@ -1,0 +1,11 @@
+{application, gmTool, [
+    {description, "GM Tool OTP application"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {mod, {gmTool_app, []}},
+    {applications, [kernel, stdlib, eWSrv]},
+    {env, []},
+    {modules, []},
+    {licenses, ["MIT"]},
+    {links, []}
+ ]}.

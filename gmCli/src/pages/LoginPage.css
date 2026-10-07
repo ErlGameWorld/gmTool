@@ -1,0 +1,170 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-100px, -100px) rotate(360deg); }
+}
+
+.login-card {
+  width: 440px;
+  max-width: 90vw;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  border: none;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-card .ant-card-head {
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 32px 24px 16px;
+}
+
+.login-card .ant-card-head-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #667eea;
+  letter-spacing: 0.5px;
+}
+
+.login-form {
+  margin-top: 24px;
+  padding: 0 24px 24px;
+}
+
+/* 输入框样式重置 - 使用Ant Design默认样式 */
+.login-form .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.login-form .ant-form-item-label {
+  padding-bottom: 4px;
+}
+
+.login-form .ant-form-item-label > label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+/* 输入框样式 */
+.login-form .ant-input,
+.login-form .ant-input-password {
+  height: 40px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-form .ant-input-affix-wrapper {
+  border-radius: 6px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.login-form .ant-input-prefix {
+  margin-right: 8px;
+  color: #667eea;
+}
+
+/* 用户名输入框特殊处理 - 确保内框右边对齐 */
+.login-form .ant-input-affix-wrapper .ant-input {
+  border: none !important;
+  box-shadow: none !important;
+  height: 100%;
+  outline: none;
+  background-color: transparent !important; /* 透明背景，让父容器背景显示 */
+  width: calc(100% - 40px) !important; /* 减少宽度，为眼睛按钮预留空间 */
+}
+
+/* 密码输入框特殊处理 - 确保内框右边对齐 */
+.login-form .ant-input-password .ant-input {
+  border: none !important;
+  box-shadow: none !important;
+  height: 100%;
+  background-color: transparent !important; /* 透明背景，让父容器背景显示 */
+  width: 100% !important; /* 保持100%宽度 */
+}
+
+.login-form .ant-input-password .ant-input-affix-wrapper {
+  padding: 0;
+  background-color: transparent !important; /* 透明背景，让父容器背景显示 */
+}
+
+/* 确保密码输入框的内框长度与用户名输入框一致 */
+.login-form .ant-input-password .ant-input-affix-wrapper .ant-input {
+  width: 100% !important;
+}
+
+.login-form-button {
+  height: 48px;
+  font-size: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.login-form-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.demo-accounts {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  border-left: 4px solid #1890ff;
+}
+
+.demo-accounts h4 {
+  margin: 0 0 8px 0;
+  color: #1890ff;
+  font-size: 14px;
+}
+
+.demo-accounts p {
+  margin: 4px 0;
+  font-size: 12px;
+  color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+  .login-card {
+    width: 100%;
+    margin: 0 10px;
+  }
+  
+  .login-container {
+    padding: 10px;
+  }
+}
